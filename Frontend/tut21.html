@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CSS Alignment</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: rgb(236 213 227);
+      }
+      .container {
+        line-height: 25px;
+        width: 900px;
+        border: 5px solid brown;
+        margin: auto;
+      }
+      .item {
+        margin: 12px 3px;
+        border: 5px solid grey;
+        padding: 20px 3px;
+        background-color: #a0caf5;
+      }
+
+      #fruits {
+        float: right;
+        width: 42%;
+      }
+
+      #computer {
+        float: left;
+        width: 56%;
+      }
+
+      #stationary {
+        /* clear: both; */
+        clear: both;
+        width: 100%;
+      }
+
+      p,
+      h3 {
+        /* text-align: right;
+  text-align: left;
+  text-align: center; */
+        text-align: justify;
+      }
+      h1{
+        margin: auto;
+        width:445px;
+      }
+    </style>
+  </head>
+  <body>
+   
+    <!-- p#fruitspara.para  -->
+    <!-- div#fruits.item  -->
+
+    <div class="container">
+
+      <h1 style="font-family: 'Times New Roman', Times, serif; color: rgb(155, 0, 116);line-height: 50px;">
+        Welcome to my store
+  
+      </h1>
+      <div id="fruits" class="item">
+        <h3>Fruits</h3>
+        <p id="fruitspara" class="para">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+          explicabo dolor cupiditate, velit nesciunt neque adipisci, eos eveniet
+          autem doloremque dicta ad modi optio porro ratione incidunt nam,
+          veniam delectus Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus, nam eligendi. Id alias esse officiis, maiores sit quisquam. Illum, corporis? Ad saepe molestiae iusto modi beatae odit dolor tenetur vero placeat quae. Magni, ut.
+        </p>
+      </div>
+      <div id="computer" class="item">
+        <h3>Computer</h3>
+        <p id="computerspara" class="para">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+          aspernatur, voluptatibus temporibus quibusdam amet rem voluptatum
+          dolores officiis sapiente delectus tempora eos esse ducimus animi
+          nihil corrupti, ipsum at in Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat praesentium, expedita aperiam rem eius sed cumque assumenda! Minus voluptatum iste vitae, magni voluptates numquam expedita! Dolorum labore numquam recusandae pariatur! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti officiis mollitia voluptatem enim aliquid sit magnam nisi, tempore voluptates iusto harum vero blanditiis velit hic quidem nam culpa sequi adipisci odio ratione itaque! Nobis!.
+        </p>
+      </div>
+      <div id="stationary" class="item">
+        <h3>Stationary</h3>
+        <p id="stationarypara" class="para">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur
+          natus ut, atque ipsam laboriosam nobis unde, ipsa dolore corporis
+          fugiat ad vitae adipisci laborum sed ex numquam repudiandae
+          accusantium optio.
+        </p>
+      </div>
+
+    </div>
+  </body>
+</html>
