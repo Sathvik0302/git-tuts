@@ -1,0 +1,5 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://donesathvik:admin@cluster1.9nzmgio.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1
+      database: TaskDescription
