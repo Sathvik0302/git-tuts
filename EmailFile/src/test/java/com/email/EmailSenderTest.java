@@ -1,5 +1,6 @@
 package com.email;
 
+import com.email.Model.Messages;
 import com.email.Service.EmailService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.List;
+
+import static org.springframework.test.util.AssertionErrors.fail;
 
 @SpringBootTest
 public class EmailSenderTest {
@@ -45,7 +49,7 @@ public class EmailSenderTest {
         File file=new File("C:\\Users\\sathvik.done\\Desktop\\Incture Works\\Intellij\\EmailFile\\src\\main\\resources\\static\\Image\\Dog.jpg");
         try {
             InputStream inputStream = new FileInputStream(file);
-            emailService.sendEmailWithFile("done.karthik2004@gmail.com",
+            emailService.sendEmailWithFile("dones.me.20@nitj.ac.in",
                     "This is image uploaded","This is the Spring Boot file Sending",
                     inputStream
                     );
@@ -54,6 +58,23 @@ public class EmailSenderTest {
         }
 
     }
+
+    @Test
+    void getInbox() {
+        try {
+            List<Messages> inboxMessages = emailService.getInboxMessages();
+            inboxMessages.forEach(item -> {
+                System.out.println(item.getSubjects());
+                System.out.println(item.getContent());
+                System.out.println(item.getFiles());
+                System.out.println("__________________________");
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail("Failed to retrieve inbox messages: " + e.getMessage());
+        }
+    }
+
 
 
 

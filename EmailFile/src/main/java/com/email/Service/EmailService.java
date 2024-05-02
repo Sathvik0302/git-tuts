@@ -1,7 +1,10 @@
 package com.email.Service;
 
+import com.email.Model.Messages;
+
 import java.io.File;
 import java.io.InputStream;
+import java.util.List;
 
 public interface EmailService {
     // for single person
@@ -17,4 +20,6 @@ public interface EmailService {
     void sendEmailWithFile(String to, String subject, String message, File file);
 
     void sendEmailWithFile(String to, String subject, String message, InputStream inputStream);
+
+    List<Messages> getInboxMessages();
 }
