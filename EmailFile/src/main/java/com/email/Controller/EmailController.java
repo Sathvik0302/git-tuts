@@ -49,6 +49,15 @@ public class EmailController {
         }
     }
 
+    @PostMapping("/sendemails")
+    public ResponseEntity<?> sendEmails(@RequestBody EmailRequest request){
+        String requestTo = request.getTo();
+        String[] toArray= requestTo.split(",");
+        emailService.sendEmails(toArray,request.getSubject(),request.getMessage());
+        return  ResponseEntity.ok(CustomResponse.builder().message("Email Sent Successfully")
+                .httpStatus(HttpStatus.OK).success(true).build());
+    }
+
 
 
 

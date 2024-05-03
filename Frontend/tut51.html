@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scope and Conditionals</title>
+  </head>
+  <body>
+   <div>
+    <ul>
+        <li>Item-1</li>
+        <li>Item-2</li>
+        <li>Item-3</li>
+        <li>Item-4</li>
+        <li>Item-5</li>
+        <li>Item-6</li>
+        <li>Item-7</li>
+    </ul>
+   </div>
+   <script>
+    var string1="This is string ";
+    var string1="This is string2";
+    console.log(string1);
+
+    let a="u"
+    console.log(a);
+    {
+let a="u6";
+console.log(a);
+    }
+    const b="This cannot bve changed"
+    console.log(b)
+
+    let age=18;
+    if(age>18){
+        console.log("You can drink")
+    }else if(age===18){
+        console.log("drink water")
+    }else{
+        cosole.log("Drink mango juice")
+    }
+
+    const cup=4 ;
+
+    switch(cup){
+        case 40:
+            console.log("The value is 40");
+            break;
+        case 41:
+            console.log("The value is 41");
+            break;
+
+        case 42:
+            console.log("The value is 42");
+            break;
+        case 43:
+            console.log("The value is 43");
+            break;
+        case 44:
+            console.log("The value is 44");
+            break;
+        case 45:
+            console.log("The value is 45");
+            break;
+        default :
+        console.log("not found");
+        break;
+    }
+
+
+
+
+
+   </script>
+  </body>
+</html>

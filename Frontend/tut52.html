@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arrays and Objects</title>
+    <style></style>
+  </head>
+  <body>
+    <div class = "conatiner">
+        <ul>
+            <li>Item-1</li>
+            <li>Item-2</li>
+            <li>Item-3</li>
+            <li>Item-4</li>
+            <li>Item-5</li>
+            <li>Item-6</li>
+            <li>Item-7</li>
+        </ul>
+    </div>
+    <script>
+        let myVar=34;
+        let myVar2="string";
+        let myVar3=null;
+        let myVar4=true;
+        let myVar5=undefined;
+
+       let employee ={
+        name:"Sathvik",
+        age:21,
+        company:`Incture`,
+        "college name":`NIT Jalandhar`
+        }
+        console.log(employee); 
+
+        let name=[1,2,3, `sathvik`,true,undefined];
+        name.push(`durga`);
+       name= name.sort();
+        console.log(name);
+
+        {
+
+        for(let i=0;i<name.length;i++){
+            console.log(name[i]);
+        }
+    }
+
+    let names = new Array(`sathvik`,`karthik`,1,`m2`,3,4,true,undefined);
+    names=names.sort(); 
+    names.push(`kalyan`);
+    console.log(names);
+
+    let mine = new Array(23);
+    mine.push(`kalyan`);
+    console.log(mine);
+    </script>
+  </body>
+</html>

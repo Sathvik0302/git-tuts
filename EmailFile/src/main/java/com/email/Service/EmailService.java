@@ -11,7 +11,7 @@ public interface EmailService {
     void sendEmail(String to,String subject,String message);
 
     // for multiple persons
-    void sendEmail(String []to,String subject,String message);
+    void sendEmails(String []to,String subject,String message);
 
     //void sendEmailWithHtml
     void sendEmailWithHtml(String to, String subject ,String htmlCode);
