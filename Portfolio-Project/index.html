@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5c76e88dc2.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+	<!-- <script src="index.js"></script> -->
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="Images/logo.png" class="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <p>Full Stack Developer</p>
+            <h1>Hi,I'm <span>Kevin</span> <br> From Austrailia</h1>
+        </div>
+    </div>
+</div>
+<!-- ----------------about-------------------- -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1"><img src="Images/user.png" alt="image not found"></div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, consectetur. Quasi dolorem earum numquam natus delectus consequuntur unde quisquam dolores nostrum, accusamus eos impedit? Totam placeat, libero eum odit ullam quo autem nesciunt omnis Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores consequatur incidunt natus minima temporibus corrupti, corporis tempora eius eum. Nemo!</p>
+
+                <div class="tab-tiles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Backend Developement</span><br>Desigining Restful APIs</li>
+                        <li><span>Web Developement</span><br>Desigining Forntend pages</li>
+                        <li><span>App Developement</span><br>Building android apps</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2024</span><br>BTech from NIT Jalandhar</li>
+                        <li><span>2019</span><br>Intermediate Education from Sri Chaitanya</li>
+                        <li><span>2017</span><br>SSC from  Sri Chaitanya</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>Internship in Incture</span><br>Desigining Restful APIs as Backend Developer</li>
+                        <li><span>Internship in Rail Coach Factory</span><br>Desigining of Home Automation IOT based project </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- ----------------------------services--------------------------------- -->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum laboriosam molestiae quam quidem tenetur repudiandae necessitatibus odio excepturi omnis velit?</p>
+                    <a href="#">learn more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-java"></i>
+                    <h2>Backend Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum laboriosam molestiae quam quidem tenetur repudiandae necessitatibus odio excepturi omnis velit?</p>
+                    <a href="#">learn more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2>App Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum laboriosam molestiae quam quidem tenetur repudiandae necessitatibus odio excepturi omnis velit? </p>
+                    <a href="#">learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- ---------------------------portfolio------------------------- -->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work"><img src="Images/work-1.png" ></div>
+        </div>
+        <div class="work-list">
+            <div class="work"><img src="Images/work-2.png" ></div>
+        </div>
+        <div class="work-list">
+            <div class="work"><img src="Images/work-3.png" ></div>
+        </div>
+    </div>
+</div>
+<script>
+var tablinks=document.getElementsByClassName("tab-links");
+var tabcontents=document.getElementsByClassName("tab-contents");
+function opentab(tabname){
+for(tablink of tablinks){
+    tablink.classList.remove("active-link");
+}
+for(tabcontent of tabcontents){
+    tabcontent.classList.remove("active-tab");
+}
+event.currentTarget.classList.add("active-link");
+document.getElementById(tabname).classList.add("active-tab");
+
+}
+</script>
+  </body>
+</html>
