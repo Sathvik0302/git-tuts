@@ -14,13 +14,15 @@
     <div class="container">
         <nav>
             <img src="Images/logo.png" class="logo">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
             </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
         </nav>
         <div class="header-text">
             <p>Full Stack Developer</p>
@@ -100,16 +102,64 @@
     <div class="container">
         <h1 class="sub-title">My Work</h1>
         <div class="work-list">
-            <div class="work"><img src="Images/work-1.png" ></div>
-        </div>
-        <div class="work-list">
-            <div class="work"><img src="Images/work-2.png" ></div>
-        </div>
-        <div class="work-list">
-            <div class="work"><img src="Images/work-3.png" ></div>
-        </div>
+            <div class="work">
+                <img src="Images/work-1.png" >
+                <div class="layer">
+                    <h3>Request Form</h3>
+                    <p>The form which allows you to raise a request regarding the work and permissions from the authorities</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="Images/work-2.png" >
+                <div class="layer">
+                    <h3>Email Sender </h3>
+                    <p>Email Sender using the smtp protocol and security sends the emails to different people sends  files and Images.</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="Images/work-3.png" >
+                <div class="layer">
+                    <h3>Employee Management</h3>
+                    <p>Employee Management used for the organization Employees regestiration and management</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>  
+        <a href="#" class="btn">See more</a>
     </div>
 </div>
+<!-- ---------------------contact----------------------------- -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>donesathvik@gmail.com</p>
+                <p><i class="fa-solid fa-square-phone"></i>7671033286</p>
+                <div class="social-icons">
+                    <a href="https://facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://twitter.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/done-sathvik/"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <a href="Images/my-cv.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">Copyright <i>©</i> by Sathvik</div>
+</div>
+
 <script>
 var tablinks=document.getElementsByClassName("tab-links");
 var tabcontents=document.getElementsByClassName("tab-contents");
@@ -125,5 +175,33 @@ document.getElementById(tabname).classList.add("active-tab");
 
 }
 </script>
+<script>
+    var sidemenu =document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right="0";
+    }
+    function closemenu(){
+        sidemenu.style.right="-200px";
+    }
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwT_NqY4PR3rNO7ycH5Td74w6uy-fzITXjmcSJkCa7QjMKK2auxaZdh31GGfZMyJVNvYA/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg=document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML="Message Sent Successfully"
+            setTimeout(function(){
+            msg.innerHTML=""
+            })
+        },5000)
+        form.reset()
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
   </body>
 </html>
